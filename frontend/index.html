@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlantCare | Plant Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div>
+                <h2>plantcare<span>.</span></h2>
+                <p>GROW WITH CARE</p>
+            </div>
+        </div>
+
+        <div class="sidebar-label">WORKSPACE</div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#dashboard" class="nav-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#myPlants" class="nav-link">
+                <i class="fa-solid fa-leaf"></i>
+                <span>My Plants</span>
+            </a>
+
+            <button class="nav-link" id="sidebarAddBtn">
+                <i class="fa-solid fa-circle-plus"></i>
+                <span>Add New Plant</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-label">CATEGORIES</div>
+
+        <div class="category-menu">
+            <button class="category-link" data-category="Indoor">
+                <span class="category-dot indoor-dot"></span>
+                Indoor Plants
+            </button>
+
+            <button class="category-link" data-category="Outdoor">
+                <span class="category-dot outdoor-dot"></span>
+                Outdoor Plants
+            </button>
+
+            <button class="category-link" data-category="Flowering">
+                <span class="category-dot flowering-dot"></span>
+                Flowering Plants
+            </button>
+
+            <button class="category-link" data-category="Herb">
+                <span class="category-dot herb-dot"></span>
+                Herbs
+            </button>
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-tip">
+                <div class="tip-icon">
+                    <i class="fa-regular fa-lightbulb"></i>
+                </div>
+
+                <h4>Plant care tip</h4>
+
+                <p>Healthy plants need the right balance of sunlight and water.</p>
+            </div>
+
+            <div class="sidebar-footer">
+                <i class="fa-solid fa-seedling"></i>
+                <span>PlantCare Management</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="dashboard">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                <span>Workspace</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <strong>Dashboard</strong>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="today-date" id="todayDate"></div>
+
+                <div class="profile">
+                    <div class="profile-avatar">P</div>
+
+                    <div class="profile-info">
+                        <strong>Plant Lover</strong>
+                        <span>Plant Enthusiast</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-section">
+
+                <div class="welcome-text">
+                    <span class="eyebrow">YOUR GREEN SPACE</span>
+
+                    <h1>Good day, Plant Lover! <span>🌿</span></h1>
+
+                    <p>
+                        A little care goes a long way.
+                        Keep your plants happy and healthy.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="addPlantBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add New Plant
+                </button>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <span>Total Plants</span>
+                        <div class="stat-icon green-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                    </div>
+
+                    <h2 id="totalPlants">0</h2>
+
+                    <p>Plants in your collection</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <span>Indoor Plants</span>
+                        <div class="stat-icon blue-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                    </div>
+
+                    <h2 id="indoorPlants">0</h2>
+
+                    <p>Growing inside your space</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <span>Outdoor Plants</span>
+                        <div class="stat-icon orange-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                    </div>
+
+                    <h2 id="outdoorPlants">0</h2>
+
+                    <p>Growing in open spaces</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+                        <span>Flowering Plants</span>
+                        <div class="stat-icon pink-icon">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                    </div>
+
+                    <h2 id="floweringPlants">0</h2>
+
+                    <p>Adding colour to your space</p>
+
+                </div>
+
+            </section>
+
+
+            <!-- PLANT COLLECTION -->
+            <section class="collection-section" id="myPlants">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">YOUR COLLECTION</span>
+                        <h2>My Plants</h2>
+                        <p>All your plants, organized in one place.</p>
+                    </div>
+
+                    <span class="plant-count" id="plantCount">
+                        0 Plants
+                    </span>
+
+                </div>
+
+
+                <!-- SEARCH AND FILTER -->
+                <div class="toolbar">
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search your plants..."
+                        >
+                    </div>
+
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="Indoor">Indoor</option>
+                        <option value="Outdoor">Outdoor</option>
+                        <option value="Flowering">Flowering</option>
+                        <option value="Herb">Herb</option>
+                    </select>
+
+                    <button class="reset-button" id="resetFilter">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div id="message" class="message"></div>
+
+
+                <!-- DYNAMIC PLANT CARDS -->
+                <div class="plant-grid" id="plantList">
+
+                    <div class="loading-state">
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        <p>Loading your plants...</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <p>Made with <span>♥</span> for a greener tomorrow.</p>
+                <p>© 2026 PlantCare Management System</p>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ADD / EDIT PLANT MODAL -->
+<div class="modal-overlay" id="plantModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="eyebrow">PLANT INFORMATION</span>
+                <h2 id="formTitle">Add New Plant</h2>
+                <p>Enter the details of your plant below.</p>
+            </div>
+
+            <button type="button" class="modal-close" id="closeModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="plantForm">
+
+            <input type="hidden" id="plantId">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="plantName">Plant Name <span>*</span></label>
+
+                    <input
+                        type="text"
+                        id="plantName"
+                        placeholder="e.g. Money Plant"
+                        maxlength="60"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category">Category <span>*</span></label>
+
+                    <select id="category" required>
+                        <option value="">Choose category</option>
+                        <option value="Indoor">Indoor</option>
+                        <option value="Outdoor">Outdoor</option>
+                        <option value="Flowering">Flowering</option>
+                        <option value="Herb">Herb</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="wateringFrequency">
+                        Watering Frequency (Days) <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="wateringFrequency"
+                        placeholder="e.g. 3"
+                        min="1"
+                        max="365"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="lastWatered">Last Watered Date <span>*</span></label>
+
+                    <input
+                        type="date"
+                        id="lastWatered"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full-width">
+                    <label for="sunlight">Sunlight Requirement <span>*</span></label>
+
+                    <select id="sunlight" required>
+                        <option value="">Choose sunlight requirement</option>
+                        <option value="Full Sunlight">Full Sunlight</option>
+                        <option value="Partial Sunlight">Partial Sunlight</option>
+                        <option value="Indirect Sunlight">Indirect Sunlight</option>
+                        <option value="Shade">Shade</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group full-width">
+                    <label for="notes">Additional Notes</label>
+
+                    <textarea
+                        id="notes"
+                        rows="3"
+                        maxlength="500"
+                        placeholder="Write something about your plant..."
+                    ></textarea>
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button type="button" class="secondary-button" id="cancelBtn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="primary-button" id="submitBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Save Plant
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
