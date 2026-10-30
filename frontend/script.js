@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:5000/api/plants";
+const API_URL = "https://plant-care-managament.onrender.com/api/plants";
 
 // DOM elements
 const plantList = document.getElementById("plantList");
