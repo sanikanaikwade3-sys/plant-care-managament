@@ -38,7 +38,7 @@ app.use((req, res) => {
 
 // Connect MongoDB and start server
 const PORT = process.env.PORT || 5000;
-
+//hi
 if (!process.env.MONGO_URI) {
     console.error("MONGO_URI is missing in .env file");
     process.exit(1);
